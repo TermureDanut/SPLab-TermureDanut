@@ -9,35 +9,22 @@ public class Lab2Application {
 
 	public static void main(String[] args) {
 		//SpringApplication.run(Lab2Application.class, args);
-		Book discoTitanic = new Book("Disco Titanic");
-		Author author = new Author("Radu Pavel Gheo");
-		discoTitanic.addAuthor(author);
-		int indexChapterOne = discoTitanic.addChapter("Capitolul 1");
-		Chapter chp1 = discoTitanic.getChapter(indexChapterOne);
-		int indexSubChapterOneOne = chp1.addSubChapter("Subcapitolul 1.1");
-		SubChapter scOneOne = chp1.getSubChapter(indexSubChapterOneOne);
-		Element element = new Element();
-		element.addParagraph("Paragraph 1");
-		element.addParagraph("Paragraph 2");
-		element.addParagraph("Paragraph 3");
-		element.addParagraph("Paragraph 4");
-		element.addParagraph("Paragraph 5");
-		element.addImage("Image 1");
-		element.addTable("Table 1");
-		scOneOne.addElement(element);
-
-		int indexSubChapterOneTwo = chp1.addSubChapter("Subcapitolul 1.2");
-		SubChapter scOneTwo = chp1.getSubChapter(indexSubChapterOneTwo);
-		Element elementOneTwo = new Element();
-		elementOneTwo.addParagraph("Paragraph 1?");
-		elementOneTwo.addParagraph("Paragraph 2?");
-		elementOneTwo.addParagraph("Paragraph 3?");
-		elementOneTwo.addParagraph("Paragraph 4?");
-		elementOneTwo.addParagraph("Paragraph 5?");
-		elementOneTwo.addImage("Image 1?");
-		elementOneTwo.addTable("Table 1?");
-		scOneTwo.addElement(elementOneTwo);
-		discoTitanic.print();
+		Book noapteBuna = new Book("Noapte buna, copii!");
+		Author rpGheo = new Author("Radu Pavel Gheo");
+		noapteBuna.addAuthor(rpGheo);
+		Section cap1 = new Section("Capitolul 1");
+		Section cap11 = new Section("Capitolul 1.1");
+		Section cap111 = new Section("Capitolul 1.1.1");
+		Section cap1111 = new Section("Subchapter 1.1.1.1");
+		noapteBuna.addElement(new Paragraph("Multumesc celor care ..."));
+		noapteBuna.addElement(cap1);
+		cap1.add(new Paragraph("Moto capitol"));
+		cap1.add(cap11);
+		cap11.add(new Paragraph("Text from subchapter 1.1"));
+		cap11.add(cap111);
+		cap111.add(new Paragraph("Text from subchapter 1.1.1"));
+		cap111.add(cap1111);
+		cap1111.add(new Image("Image subchapter 1.1.1.1"));
+		noapteBuna.print();
 	}
-
 }
