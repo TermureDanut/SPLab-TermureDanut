@@ -1,4 +1,4 @@
-package com.example.classes;
+package com.example.services;
 
 public interface AlignStrategy {
     void render(String text);

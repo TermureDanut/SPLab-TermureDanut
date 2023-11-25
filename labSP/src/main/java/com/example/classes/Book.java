@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Book{
     private String title;
+
     private List<Element> sections;
     private List<Author> authors;
 
@@ -13,14 +14,17 @@ public class Book{
 
         this.sections = sections;
     }
+
     public void addAuthor(Author a){
         authors.add(a);
     }
+
     public Book(String title){
         this.title =  title;
         authors = new ArrayList<Author>();
         sections = null;
     }
+
     public int createSection(String ChapterTitle){
         if (sections == null){
             sections = new ArrayList<Element>();
@@ -47,5 +51,17 @@ public class Book{
     public void addContent(Element paragraph) {
         if(sections == null) sections = new ArrayList<Element>();
         sections.add(paragraph);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Iterable<? extends Author> getAuthors() {
+        return authors;
+    }
+
+    public List<Element> getSections(){
+        return sections;
     }
 }

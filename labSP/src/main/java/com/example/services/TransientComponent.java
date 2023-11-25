@@ -1,4 +1,4 @@
-package com.example.lab6;
+package com.example.services;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;

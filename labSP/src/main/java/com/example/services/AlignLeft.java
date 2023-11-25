@@ -1,8 +1,8 @@
-package com.example.classes;
+package com.example.services;
 
 public class AlignLeft implements AlignStrategy{
     @Override
     public void render(String text) {
-        System.out.println("#" + text);
+        System.out.println(text);
     }
 }

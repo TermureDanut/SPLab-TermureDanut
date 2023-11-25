@@ -1,33 +1,60 @@
 package com.example.classes;
 
-import java.util.Objects;
+import java.awt.*;
 
-public class ImageProxy implements Element{
-    private String imagename;
-    private Image realImage= null;
-    public ImageProxy(String imagename) {
-        this.imagename = imagename;
+
+public class ImageProxy implements Picture, Element{
+    String url;
+    Dimension dim;
+    Image realImage;
+
+    ImageProxy(String url, Dimension dim, Image realImage)
+    {
+        this.url = url;
+        this.dim = dim;
+        this.realImage = realImage;
     }
-    private void loadRealImage() {
-        if (Objects.isNull(realImage)) {
-            realImage = new Image(this.imagename);
+    public ImageProxy(String url){
+        this.url = url;
+        dim = null;
+        realImage = null;
+    }
+    @Override
+    public String url() {
+        return url;
+    }
+    @Override
+    public Dimension dim() {
+        return dim;
+    }
+    @Override
+    public String content() {
+        return null;
+    }
+    public Image loadImage(){
+        if (realImage == null) {
+            realImage = new Image(url);
         }
+        return realImage;
     }
     @Override
     public void print() {
-        loadRealImage();
-        realImage.print();
+        loadImage().print();
     }
     @Override
     public void add(Element e) {
-        throw new UnsupportedOperationException();
+
     }
     @Override
     public void removeElement(Element e) {
-        throw new UnsupportedOperationException();
+
     }
     @Override
     public Element get(int i) {
-        throw new UnsupportedOperationException();
+        return null;
+    }
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImageProxy(this);
     }
 }
