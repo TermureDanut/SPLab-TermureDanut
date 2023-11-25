@@ -1,4 +1,4 @@
-package com.example.lab6;
+package com.example.services;
 
 import org.springframework.stereotype.Component;
 @Component

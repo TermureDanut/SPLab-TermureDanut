@@ -1,4 +1,4 @@
-package com.example.lab6;
+package com.example.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
